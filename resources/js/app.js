@@ -32,5 +32,13 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#vue-wrapper',
+    methods : {
+        city: function(event){
+            // const url = button.dataset.city;
+            // axios.get(this.myCity);
+            console.log(this.getAttribute());
+            // alert('Hello ' + this.myCity + '!')
+        }
+    }
 });

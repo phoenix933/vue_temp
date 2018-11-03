@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in!<br>
+                    {{ $istanbul['consolidated_weather'][0]['the_temp'] }}
                 </div>
             </div>
         </div>
