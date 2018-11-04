@@ -13923,10 +13923,7 @@ var app = new Vue({
   el: '#vue-wrapper',
   methods: {
     city: function city(event) {
-      // const url = button.dataset.city;
-      // axios.get(this.myCity);
-      console.log(this.getAttribute());
-      // alert('Hello ' + this.myCity + '!')
+      console.log(this);
     }
   }
 });
