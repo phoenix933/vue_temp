@@ -23,29 +23,30 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-4">
-                                <a class="col-md-12 btn btn-primary" href="javascript:;" data-cityName="Istanbul" v-on:click="city()">Istanbul</a>
+                                <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Istanbul')">Istanbul</a>
                             </div>
                             <div class="col-md-4">
-                                <a class="col-md-12 btn btn-primary" href="javascript:;" data-cityName="Berlin" v-on:click="city()">Berlin</a>
+                                <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Berlin')">Berlin</a>
                             </div>
                             <div class="col-md-4">
-                                <a class="col-md-12 btn btn-primary" href="javascript:;" data-cityName="London" v-on:click="city()">London</a>
+                                <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('London')">London</a>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-4">
-                                <a class="col-md-12 btn btn-primary" href="javascript:;" data-cityName="Helsinki" v-on:click="city()">Helsinki</a>
+                                <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Helsinki')">Helsinki</a>
                             </div>
                             <div class="col-md-4">
-                                <a class="col-md-12 btn btn-primary" href="javascript:;" data-cityName="Dublin" v-on:click="city()">Dublin</a>
+                                <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Dublin')">Dublin</a>
                             </div>
                             <div class="col-md-4">
-                                <a class="col-md-12 btn btn-primary" href="javascript:;" data-cityName="Vancouver" v-on:click="city()">Vancouver</a>
+                                <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Vancouver')">Vancouver</a>
                             </div>
                         </div>
                     </div>
+                    <router-link to="/">Go to Home</router-link>
                 </div>
             </div>
         </div>
