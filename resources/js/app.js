@@ -39,7 +39,7 @@ function dynamicWoeid (route) {
     var param = route.params.woeid
     var myString = param.substring(1)
     return {
-        message: myString
+        cityWoeid: myString
     }
 }
 

@@ -14039,7 +14039,7 @@ function dynamicWoeid(route) {
     var param = route.params.woeid;
     var myString = param.substring(1);
     return {
-        message: myString
+        cityWoeid: myString
     };
 }
 
@@ -50066,7 +50066,6 @@ module.exports = Component.exports
 //
 //
 //
-//
 
 module.exports = {
     methods: {
@@ -50091,121 +50090,114 @@ var render = function() {
         _c("div", { staticClass: "card-header" }, [_vm._v("Homepage")]),
         _vm._v(" "),
         _c("div", { staticClass: "card-body", attrs: { id: "vue-wrapper" } }, [
-          _c(
-            "div",
-            { staticClass: "container" },
-            [
-              _vm._m(0),
-              _c("br"),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-4" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "col-md-12 btn btn-primary",
-                        attrs: { href: "javascript:;" },
-                        on: {
-                          click: function($event) {
-                            _vm.city("Istanbul")
-                          }
+          _c("div", { staticClass: "container" }, [
+            _vm._m(0),
+            _c("br"),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "col-md-12 btn btn-primary",
+                      attrs: { href: "javascript:;" },
+                      on: {
+                        click: function($event) {
+                          _vm.city("2344116")
                         }
-                      },
-                      [_vm._v("Istanbul")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "col-md-12 btn btn-primary",
-                        attrs: { href: "javascript:;" },
-                        on: {
-                          click: function($event) {
-                            _vm.city("Berlin")
-                          }
+                      }
+                    },
+                    [_vm._v("Istanbul")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "col-md-12 btn btn-primary",
+                      attrs: { href: "javascript:;" },
+                      on: {
+                        click: function($event) {
+                          _vm.city("638242")
                         }
-                      },
-                      [_vm._v("Berlin")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "col-md-12 btn btn-primary",
-                        attrs: { href: "javascript:;" },
-                        on: {
-                          click: function($event) {
-                            _vm.city("London")
-                          }
+                      }
+                    },
+                    [_vm._v("Berlin")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "col-md-12 btn btn-primary",
+                      attrs: { href: "javascript:;" },
+                      on: {
+                        click: function($event) {
+                          _vm.city("44418")
                         }
-                      },
-                      [_vm._v("London")]
-                    )
-                  ])
+                      }
+                    },
+                    [_vm._v("London")]
+                  )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-4" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "col-md-12 btn btn-primary",
-                        attrs: { href: "javascript:;" },
-                        on: {
-                          click: function($event) {
-                            _vm.city("Helsinki")
-                          }
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "col-md-12 btn btn-primary",
+                      attrs: { href: "javascript:;" },
+                      on: {
+                        click: function($event) {
+                          _vm.city("565346")
                         }
-                      },
-                      [_vm._v("Helsinki")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "col-md-12 btn btn-primary",
-                        attrs: { href: "javascript:;" },
-                        on: {
-                          click: function($event) {
-                            _vm.city("Dublin")
-                          }
+                      }
+                    },
+                    [_vm._v("Helsinki")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "col-md-12 btn btn-primary",
+                      attrs: { href: "javascript:;" },
+                      on: {
+                        click: function($event) {
+                          _vm.city("560743")
                         }
-                      },
-                      [_vm._v("Dublin")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "col-md-4" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "col-md-12 btn btn-primary",
-                        attrs: { href: "javascript:;" },
-                        on: {
-                          click: function($event) {
-                            _vm.city("Vancouver")
-                          }
+                      }
+                    },
+                    [_vm._v("Dublin")]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-4" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "col-md-12 btn btn-primary",
+                      attrs: { href: "javascript:;" },
+                      on: {
+                        click: function($event) {
+                          _vm.city("9807")
                         }
-                      },
-                      [_vm._v("Vancouver")]
-                    )
-                  ])
+                      }
+                    },
+                    [_vm._v("Vancouver")]
+                  )
                 ])
-              ]),
-              _vm._v(" "),
-              _c("router-link", { attrs: { to: "/" } }, [_vm._v("Go to Home")])
-            ],
-            1
-          )
+              ])
+            ])
+          ])
         ])
       ])
     ])
@@ -50324,7 +50316,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
-        message: {
+        cityWoeid: {
             type: String,
             default: 'Vue!'
         }
@@ -50345,7 +50337,7 @@ var render = function() {
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card card-default" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v(_vm._s(_vm.message))
+            _vm._v(_vm._s(_vm.cityWoeid))
           ]),
           _vm._v(" "),
           _c(
@@ -50358,7 +50350,11 @@ var render = function() {
               _c("br"),
               _c("br"),
               _vm._v(" "),
-              _c("router-link", { attrs: { to: "/" } }, [_vm._v("Go to Home")])
+              _c(
+                "router-link",
+                { staticClass: "btn btn-danger", attrs: { to: "/" } },
+                [_vm._v("Back to Home")]
+              )
             ],
             1
           )

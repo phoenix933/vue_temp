@@ -18,4 +18,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/foo', 'HomeController@foo')->name('foo');
+Route::get('/get-woeid/{name}', 'WeatherController@getWoeid')->name('getWoeid');
+Route::get('/get-data/{woeid}', 'WeatherController@getData')->name('getData');

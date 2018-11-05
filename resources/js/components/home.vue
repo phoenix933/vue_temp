@@ -21,30 +21,29 @@
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Istanbul')">Istanbul</a>
+                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('2344116')">Istanbul</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Berlin')">Berlin</a>
+                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('638242')">Berlin</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('London')">London</a>
+                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('44418')">London</a>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Helsinki')">Helsinki</a>
+                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('565346')">Helsinki</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Dublin')">Dublin</a>
+                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('560743')">Dublin</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('Vancouver')">Vancouver</a>
+                                    <a class="col-md-12 btn btn-primary" href="javascript:;" v-on:click="city('9807')">Vancouver</a>
                                 </div>
                             </div>
                         </div>
-                        <router-link to="/">Go to Home</router-link>
                     </div>
                 </div>
             </div>
