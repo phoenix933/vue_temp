@@ -13926,19 +13926,38 @@ Vue.component('weather', __webpack_require__(40));
  */
 
 var Home = { template: '<div>Home</div>' };
-var routes = [{ path: '/', component: Home }];
+var Foo = function Foo() {
+    return __webpack_require__(40);
+};
+
+var routes = [{ path: '/', component: Home }, { path: '/weather/:woeid', component: Foo }];
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-  routes: routes
+    routes: routes
 });
 var app = new Vue({
-  el: '#vue-wrapper',
-  router: router,
-  methods: {
-    city: function city(event) {
-      console.log(event);
-      this.$router.push('/weather/:2344116');
+    el: '#vue-wrapper',
+    router: router,
+    methods: {
+        city: function city(event) {
+            console.log(event);
+            router.push('/weather/:2344116');
+        }
     }
-  }
+}).$mount('#vue-wrapper');
+
+// Home.vue
+/* harmony default export */ __webpack_exports__["default"] = ({
+    computed: {
+        username: function username() {
+            // We will see what `params` is shortly
+            return this.$route.params.username;
+        }
+    },
+    methods: {
+        goBack: function goBack() {
+            window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/');
+        }
+    }
 });
 
 /***/ }),

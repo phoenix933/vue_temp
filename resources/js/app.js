@@ -35,8 +35,11 @@ Vue.component('weather', require('./components/weather.vue'));
  */
 
 const Home = { template: '<div>Home</div>' }
+const Foo = () => require('./components/weather.vue')
+
 const routes = [
-  { path: '/', component: Home }
+    { path: '/', component: Home },
+    { path: '/weather/:woeid', component: Foo },
 ]
 const router = new VueRouter({
   routes
@@ -47,7 +50,24 @@ const app = new Vue({
     methods : {
         city: function(event){
             console.log(event);
-            this.$router.push('/weather/:2344116')
+            router.push('/weather/:2344116')
         }
     }
-});
+}).$mount('#vue-wrapper')
+
+// Home.vue
+export default {
+    computed: {
+        username () {
+            // We will see what `params` is shortly
+            return this.$route.params.username
+        }
+    },
+    methods: {
+        goBack () {
+            window.history.length > 1
+            ? this.$router.go(-1)
+            : this.$router.push('/')
+        }
+    }
+}

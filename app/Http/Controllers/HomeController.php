@@ -28,4 +28,8 @@ class HomeController extends Controller
         // dd($json);
         return view('home')->with('istanbul', $json);
     }
+    public function foo()
+    {
+        return view('foo');
+    }
 }

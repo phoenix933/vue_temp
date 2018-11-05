@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="app">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -46,6 +46,7 @@
                             </div>
                         </div>
                     </div>
+                    <router-link to="/foo">Go to Foo</router-link><br>
                     <router-link to="/">Go to Home</router-link>
                 </div>
             </div>
