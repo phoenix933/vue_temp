@@ -50313,6 +50313,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -50321,7 +50333,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             default: 'Vue!'
         }
     },
-    mounted: function mounted() {}
+    data: function data() {
+        return {
+            dataArray: [],
+            loading: false
+        };
+    },
+    mounted: function mounted() {
+        this.getVueData();
+    },
+
+    methods: {
+        getVueData: function getVueData() {
+            var _this = this;
+
+            this.loading = true;
+            axios.get('/get-data/' + this.cityWoeid).then(function (response) {
+                _this.loading = false;
+                _this.dataArray = response.data;
+                console.log(_this.dataArray);
+            });
+        }
+    }
 });
 
 /***/ }),
@@ -50337,16 +50370,27 @@ var render = function() {
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card card-default" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v(_vm._s(_vm.cityWoeid))
+            _vm._v(_vm._s(_vm.dataArray["title"]))
           ]),
           _vm._v(" "),
           _c(
             "div",
             { staticClass: "card-body" },
             [
-              _vm._v(
-                "\n                    Weather Component.\n                    "
-              ),
+              _c("i", {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: _vm.loading,
+                    expression: "loading"
+                  }
+                ],
+                staticClass: "fa fa-spinner fa-spin fa-5x margin-left-45"
+              }),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
               _c("br"),
               _c("br"),
               _vm._v(" "),
@@ -50363,7 +50407,28 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "table",
+      { staticClass: "table table-borderless", attrs: { id: "table" } },
+      [
+        _c("thead", [
+          _c("tr", [
+            _c("th", [_vm._v("ID")]),
+            _vm._v(" "),
+            _c("th", [_vm._v("Name")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("tr", [_c("td"), _vm._v(" "), _c("td")])
+      ]
+    )
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
