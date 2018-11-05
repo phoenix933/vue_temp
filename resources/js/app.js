@@ -20,8 +20,6 @@ Vue.use(VueRouter)
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-Vue.component('weather', require('./components/weather.vue'));
-
 // const files = require.context('./', true, /\.vue$/i)
 
 // files.keys().map(key => {
@@ -34,18 +32,19 @@ Vue.component('weather', require('./components/weather.vue'));
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const Home = { template: '<div>Home</div>' }
-const Foo = () => require('./components/weather.vue')
+const Home = Vue.component('home', require('./components/home.vue'))
+const Weather = Vue.component('weather', require('./components/weather.vue'))
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/weather/:woeid', component: Foo },
+    { path: '/Weather/:woeid', component: Weather }
 ]
 const router = new VueRouter({
-  routes
+    routes
 })
+
 const app = new Vue({
-    el: '#vue-wrapper',
+    el: '#app',
     router,
     methods : {
         city: function(event){
@@ -53,16 +52,10 @@ const app = new Vue({
             router.push('/weather/:2344116')
         }
     }
-}).$mount('#vue-wrapper')
+}).$mount('#app')
 
 // Home.vue
 export default {
-    computed: {
-        username () {
-            // We will see what `params` is shortly
-            return this.$route.params.username
-        }
-    },
     methods: {
         goBack () {
             window.history.length > 1
