@@ -57,7 +57,7 @@
         methods: {
             city: function(event){
                 console.log(event);
-                this.$router.push('/weather/:2344116')
+                this.$router.push('/weather/:' + event)
             }
         }
     }

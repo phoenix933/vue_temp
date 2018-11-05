@@ -35,23 +35,24 @@ Vue.use(VueRouter)
 const Home = Vue.component('home', require('./components/home.vue'))
 const Weather = Vue.component('weather', require('./components/weather.vue'))
 
+function dynamicWoeid (route) {
+    var param = route.params.woeid
+    var myString = param.substring(1)
+    return {
+        message: myString
+    }
+}
+
 const routes = [
     { path: '/', component: Home },
-    { path: '/Weather/:woeid', component: Weather }
+    { path: '/Weather/:woeid', component: Weather, props: dynamicWoeid }
 ]
 const router = new VueRouter({
     routes
 })
 
 const app = new Vue({
-    el: '#app',
-    router,
-    methods : {
-        city: function(event){
-            console.log(event);
-            router.push('/weather/:2344116')
-        }
-    }
+    router
 }).$mount('#app')
 
 // Home.vue
