@@ -50336,7 +50336,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             dataArray: [],
-            loading: false
+            consolidated_weather: [],
+            loading: false,
+            notLoading: true,
+            icon_url: null,
+            the_temp: null,
+            min_temp: null,
+            max_temp: null
         };
     },
     mounted: function mounted() {
@@ -50348,9 +50354,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             this.loading = true;
+            this.notLoading = false;
             axios.get('/get-data/' + this.cityWoeid).then(function (response) {
                 _this.loading = false;
+                _this.notLoading = true;
                 _this.dataArray = response.data;
+                _this.consolidated_weather = _this.dataArray.consolidated_weather[0];
+                _this.the_temp = _this.consolidated_weather.the_temp.toFixed(2);
+                _this.min_temp = _this.consolidated_weather.min_temp.toFixed(2);
+                _this.max_temp = _this.consolidated_weather.max_temp.toFixed(2);
+                _this.icon_url = "https://www.metaweather.com//static/img/weather/png/64/" + _this.consolidated_weather.weather_state_abbr + ".png";
                 console.log(_this.dataArray);
             });
         }
@@ -50370,7 +50383,7 @@ var render = function() {
       _c("div", { staticClass: "col-md-8" }, [
         _c("div", { staticClass: "card card-default" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v(_vm._s(_vm.dataArray["title"]))
+            _vm._v(_vm._s(_vm.dataArray.title))
           ]),
           _vm._v(" "),
           _c(
@@ -50389,7 +50402,41 @@ var render = function() {
                 staticClass: "fa fa-spinner fa-spin fa-5x margin-left-45"
               }),
               _vm._v(" "),
-              _vm._m(0),
+              _c(
+                "div",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.notLoading,
+                      expression: "notLoading"
+                    }
+                  ],
+                  staticClass: "row"
+                },
+                [
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("h1", [_vm._v(_vm._s(_vm.dataArray.title))]),
+                    _vm._v(" "),
+                    _c("h3", [_vm._v(_vm._s(_vm.the_temp) + " °C ")])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-md-6" }, [
+                    _c("img", { attrs: { src: _vm.icon_url } }),
+                    _c("br"),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "d-block" }, [
+                      _vm._v("Min: " + _vm._s(_vm.min_temp) + " °C ")
+                    ]),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "d-block" }, [
+                      _vm._v("Max: " + _vm._s(_vm.max_temp) + " °C ")
+                    ])
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c("br"),
               _c("br"),
@@ -50407,28 +50454,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "table",
-      { staticClass: "table table-borderless", attrs: { id: "table" } },
-      [
-        _c("thead", [
-          _c("tr", [
-            _c("th", [_vm._v("ID")]),
-            _vm._v(" "),
-            _c("th", [_vm._v("Name")])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("tr", [_c("td"), _vm._v(" "), _c("td")])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
