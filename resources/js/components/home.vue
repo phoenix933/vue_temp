@@ -10,10 +10,10 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-9">
-                                        <input id="input" type="text" class="form-control" placeholder="search ...">
+                                        <input v-model="newItem.keyword" id="keyword" name="keyword" type="text" class="form-control" placeholder="search ...">
                                     </div>
                                     <div class="col-md-3">
-                                        <a href="javascript:;" id="search" class="col-md-12 btn btn-success btn-block">Search</a>
+                                        <a href="javascript:;" id="search" class="col-md-12 btn btn-success btn-block" v-on:click="search()">Search</a>
                                     </div>
                                 </div>
                             </div>
@@ -53,10 +53,21 @@
 
 <script>
     module.exports = {
+        data() {
+            return {
+                newItem : {'keyword':''}
+            }
+        },
         methods: {
             city: function(event){
-                console.log(event);
                 this.$router.push('/weather/:' + event)
+            },
+            search: function(){
+                var input = this.newItem;
+            	if(input['keyword'] != ''){
+                    this.newItem = {'keyword':''}
+            		this.$router.push('/search/:' + input['keyword'])
+            	}
             }
         }
     }

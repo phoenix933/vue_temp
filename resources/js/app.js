@@ -34,6 +34,7 @@ Vue.use(VueRouter)
 
 const Home = Vue.component('home', require('./components/home.vue'))
 const Weather = Vue.component('weather', require('./components/weather.vue'))
+const Search = Vue.component('search', require('./components/search.vue'))
 
 function dynamicWoeid (route) {
     var param = route.params.woeid
@@ -42,10 +43,18 @@ function dynamicWoeid (route) {
         cityWoeid: myString
     }
 }
+function searchFunc (route) {
+    var param = route.params.keyword
+    var myString = param.substring(1)
+    return {
+        keyWord: myString
+    }
+}
 
 const routes = [
     { path: '/', component: Home },
-    { path: '/Weather/:woeid', component: Weather, props: dynamicWoeid }
+    { path: '/Weather/:woeid', component: Weather, props: dynamicWoeid },
+    { path: '/search/:keyword', component: Search, props: searchFunc }
 ]
 const router = new VueRouter({
     routes
